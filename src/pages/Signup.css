@@ -1,0 +1,26 @@
+body {
+    background: url("bgimg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .nav-menu ul li {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+    border: 1 px solid #fff;
+  }
+
+  .link :hover,
+  .active {
+    border-bottom: 2px solid #fff;
+  }
+  .nav-button .btn {
+    text-align: center;
+    margin: 15px;
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+  }
