@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
 export function Signup() {
   
   const usernameRef = useRef<HTMLInputElement>();
@@ -50,6 +51,10 @@ export function Signup() {
           </div>
           <div className="justify-center flex text-white text-xl  border-inherit mr-20 mt-2">
             <SignUp onClick={signup}  />
+          </div>
+          <div className="text-white text-sm ml-28 py-2">
+            Already have an Account ? <button  onClick={() => navigate("/signin")}> SignIn</button>
+
           </div>
         </div>
       </div>

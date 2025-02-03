@@ -5,6 +5,7 @@ import { TwitterIcon } from "../icons/TwitterIcon";
 import { YoutubeIcon } from "../icons/YoutubeIcon";
 import { SidebarItem } from "./SidebarItem";
 import { BACKEND_URL } from "../../config";
+import { DocIcon } from "../icons/Document";
 
 
 
@@ -46,7 +47,7 @@ export function Sidebar({ userId   , onFilter }) {
       </div>
 
       <div className="pt-8 pl-4">
-      <SidebarItem icon={<TwitterIcon />} text="All Links" onClick={() => onFilter("all")} />
+      <SidebarItem icon={<DocIcon />} text="All Links" onClick={() => onFilter("all")} />
         <SidebarItem text="Twitter" icon={<TwitterIcon />} onClick={() => onFilter("twitter")}/>
         <SidebarItem text="Youtube" icon={<YoutubeIcon />}  onClick={() => onFilter("youtube")} />
 
