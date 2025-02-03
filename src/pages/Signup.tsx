@@ -34,7 +34,7 @@ export function Signup() {
   }
 
   return (
-    <div className="bg-custom-bg bg-cover bg-no-repeat bg-fixed bg-[url('/bgimg.jpg')] bg-black">
+    <div className="bg-custom-bg bg-cover bg-no-repeat bg-fixed  bg-black">
     <div className="wrapper flex justify-center items-center min-h-screen ">
       <div className="Form-box relative flex items-center justify-center overflow-hidden w-auto h-auto">
         <div className="register-container flex-col w-[500px] h-[250px]">
