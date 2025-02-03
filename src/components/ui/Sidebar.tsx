@@ -4,7 +4,7 @@ import { UserIcon } from "../icons/user";
 import { TwitterIcon } from "../icons/TwitterIcon";
 import { YoutubeIcon } from "../icons/YoutubeIcon";
 import { SidebarItem } from "./SidebarItem";
-import { BACKEND_URL } from "../../config";
+// import { BACKEND_URL } from "../../config";
 import { DocIcon } from "../icons/Document";
 
 
@@ -12,30 +12,30 @@ import { DocIcon } from "../icons/Document";
   
 //@ts-ignore
 export function Sidebar({ userId   , onFilter }) {
-  const fetchUsername = async () => {
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/v1/${userId}`);
-      console.log(userId)
-      console.log("Fetching username...");
+  // const fetchUsername = async () => {
+  //   try {
+  //     const response = await fetch(`${BACKEND_URL}/api/v1/${userId}`);
+  //     console.log(userId)
+  //     console.log("Fetching username...");
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
 
-      const data = await response.json();
-      console.log("Fetched Username:", data.username);
+  //     const data = await response.json();
+  //     console.log("Fetched Username:", data.username);
 
-      return data; // Return the fetched data properly
-    } catch (error) {
-      console.error("Error fetching username:", error);
-    }
-  };
+  //     return data; // Return the fetched data properly
+  //   } catch (error) {
+  //     console.error("Error fetching username:", error);
+  //   }
+  // };
 
-  let user;
-  fetchUsername().then((data) => {
-    user = data;
-    console.log("User Data:", user);
-  });
+  // let user;
+  // fetchUsername().then((data) => {
+  //   user = data;
+  //   console.log("User Data:", user);
+  // });
 
   return (
     <div className="h-screen border-r-2 w-64 fixed left-0 top-0 pl-6 bg-blue-100">
