@@ -6,7 +6,6 @@ import { InfoIcon } from "../icons/info";
 import { TwitterIcon } from "../icons/TwitterIcon";
 import { LinkedinIcon } from "../icons/linkedin";
 import { TwitterTweetEmbed } from "react-twitter-embed";
-import { LinkedInEmbed } from "react-social-media-embed";
 
 interface CardProps {
   title: string;
@@ -20,10 +19,11 @@ export function Cards({
   title,
   link,
   type,
-  contentId,
+  contentId ,
   fetchContents,
 }: CardProps) {
-  async function deletecontent(contentId, userId) {
+  //@ts-ignore
+  async function deletecontent(contentId) {
     await axios.delete(
       `${BACKEND_URL}/api/v1/content`,
 
@@ -33,7 +33,7 @@ export function Cards({
         },
         data: {
           contentId,
-          userId,
+          
         },
       }
     );
@@ -73,8 +73,9 @@ export function Cards({
   console.log("Extracted Post ID:", linkedInPostId);
   
 
-  const extractTweetId = (link: string): string | null => {
+  const extractTweetId = (link: string): string | number => {
     const match = link.match(/status\/(\d+)/);
+    //@ts-ignore
     return match ? match[1] : null;
   };
 
@@ -117,10 +118,10 @@ export function Cards({
                 style={{ height: "163px", overflowY: "auto" }}
                 src={link.replace("watch", "embed").replace("?v=", "/")}
                 title="YouTube video player"
-                frameborder="0"
+               
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
               ></iframe>
             )}
           </div>
@@ -132,7 +133,7 @@ export function Cards({
               style={{ height: "163px", overflowY: "auto" }}
             >
               {/* <blockquote className="twitter-tweet"><p lang="qst" dir="ltr">Yes <a href="https://t.co/NwCAPMr9ia">https://t.co/NwCAPMr9ia</a></p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1881052891370361098?ref_src=twsrc%5Etfw">January 19, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" ></script> */}
-              <TwitterTweetEmbed tweetId={tweetId}></TwitterTweetEmbed>
+              <TwitterTweetEmbed tweetId={tweetId.toString()}></TwitterTweetEmbed>
             </div>
           )}
         </div>

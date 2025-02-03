@@ -16,7 +16,7 @@ enum ContentType {
   Youtube = "youtube",
   Twitter = "twitter",
   Linkedin = "linkedin",
-  Document = "docs",
+  
   Instagram = "instagram",
   Type = "type",
 }
@@ -97,7 +97,7 @@ export function CreateContentModal({ open, onClose , fetchContents}: CreateConte
                   <option value={ContentType.Youtube}>YouTube</option>
                   <option value={ContentType.Twitter}>Twitter</option>
                   <option value={ContentType.Linkedin}>LinkedIn</option>
-                  <option value={ContentType.Document}>Document</option>
+                  {/* <option value={ContentType.Document}>Document</option> */}
                 </select>
               </div>
 

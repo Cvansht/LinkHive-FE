@@ -16,11 +16,7 @@ const variantStyles = {
    
 }
 
-// const sizeStyles = {
-//     "sm" : "py-2 px-2",
-//     "md" : "py-2 px-4",
-//     "lg" : "py-4 px-4"
-// }
+
 const defaultStyles = "rounded-lg flex"
 
 ///way to concatinate strings is let fullname =${firstname} ${lastname } now we will use it to concaatinate different styles ..
@@ -50,6 +46,24 @@ export function NewButton({ onClick }: { onClick: () => void }){
     return (<div className="justify-center py-2 border m-1.5 w-56 bg-purple-600 rounded-md mt-2">
         <button className="font-semibold text-white text-xl rounded-md flex w-56 px-20"  onClick={onClick} >
             POST 
+        </button>
+
+    </div>)
+}
+export function SignIn({ onClick }: { onClick: () => void }){
+    return (<div className="justify-center  w-56 bg-blue-700 rounded-md h-12  hover:bg-blue-500 transition duration-500; ">
+        <button className="font-semibold text-white text-2xl flex w-56 px-20 py-2"onClick={onClick} >
+            Signin
+           
+        </button>
+
+    </div>)
+}
+export function SignUp({ onClick }: { onClick: () => void }){
+    return (<div className="justify-center  w-56 bg-blue-700 rounded-md h-12  hover:bg-blue-500 transition duration-500; ">
+        <button className="font-semibold text-white text-2xl flex w-56 px-16 py-2"onClick={onClick} >
+            Register
+           
         </button>
 
     </div>)
