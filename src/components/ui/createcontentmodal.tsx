@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { CrossIcon } from "../icons/CrossIcon";
 import { NewButton } from "./button";
-import { Discription, Input } from "./Input";
+import { Discription, Input, InputUsername } from "./Input";
 import axios from "axios";
 import { BACKEND_URL } from "../../config";
 
@@ -79,8 +79,8 @@ export function CreateContentModal({ open, onClose , fetchContents}: CreateConte
               </span>
 
               <div>
-                <Input reference={titleRef} placeholder={"Title"} />
-                <Input reference={linkRef} placeholder={"Link"} />
+                <InputUsername reference={titleRef} placeholder={"Title"} />
+                <InputUsername reference={linkRef} placeholder={"Link"} />
                 <Discription
                   reference={discriptionRef}
                   placeholder={"Discription"}
