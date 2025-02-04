@@ -37,9 +37,9 @@ export function Dashboard() {
     <div className="opacity-100">
      
       <Sidebar userId={(contents?.[0] as any)?.userId?.toString() ?? ""}
-       onFilter={filterByType}  />
+       onFilter={filterByType}/>
 
-      <div className="p-4 ml-64 min-h-screen border-2">
+      <div className="p-4 ml-64 min-h-screen border-2 ">
         <CreateContentModal
           open={modalOpen}
           onClose={() => {
@@ -75,7 +75,7 @@ export function Dashboard() {
                     },
                   }
                 );
-                const shareUrl = `http://localhost:5173/share/ ${response.data.hash}`;
+                const shareUrl = `https://link-hive.netlify.app/ ${response.data.hash}`;
                 alert(shareUrl);
               }}
             />
