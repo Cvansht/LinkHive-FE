@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { CrossIcon } from "../icons/CrossIcon";
 import { NewButton } from "./button";
-import { Discription, Input, InputUsername } from "./Input";
+import { Discription, InputUsername } from "./Input";
 import axios from "axios";
 import { BACKEND_URL } from "../../config";
 
