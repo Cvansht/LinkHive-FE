@@ -83,7 +83,7 @@ export function CreateContentModal({ open, onClose , fetchContents}: CreateConte
                 <InputUsername reference={linkRef} placeholder={"Link"} />
                 <Discription
                   reference={discriptionRef}
-                  placeholder={"Discription"}
+                  placeholder={"Description"}
                 />
               </div>
               <div className="w-56 ml-1.5">
