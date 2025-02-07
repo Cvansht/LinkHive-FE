@@ -5,6 +5,7 @@ import { YoutubeIcon } from "../icons/YoutubeIcon";
 import { InfoIcon } from "../icons/info";
 import { TwitterIcon } from "../icons/TwitterIcon";
 import { LinkedinIcon } from "../icons/linkedin";
+import { useEffect } from "react";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 
 interface CardProps {
@@ -19,9 +20,21 @@ export function Cards({
   title,
   link,
   type,
-  contentId ,
+  contentId,
   fetchContents,
 }: CardProps) {
+  // Dynamically load the Twitter widget script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   //@ts-ignore
   async function deletecontent(contentId) {
     await axios.delete(
@@ -33,7 +46,6 @@ export function Cards({
         },
         data: {
           contentId,
-          
         },
       }
     );
@@ -71,11 +83,10 @@ export function Cards({
 
   console.log("Original URL:", link);
   console.log("Extracted Post ID:", linkedInPostId);
-  
 
-  const extractTweetId = (link: string): string | number => {
+  // Extract Tweet ID
+  const extractTweetId = (link: string): string | null => {
     const match = link.match(/status\/(\d+)/);
-    //@ts-ignore
     return match ? match[1] : null;
   };
 
@@ -111,21 +122,17 @@ export function Cards({
           </div>
         </div>
         <div>
-          <div className="pt-4" >
+          <div className="pt-4">
             {type === "youtube" && (
-             
-              
               <iframe
                 className="w-full"
                 style={{ height: "163px", overflowY: "auto" }}
                 src={link.replace("watch", "embed").replace("?v=", "/")}
                 title="YouTube video player"
-              
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               ></iframe>
-              
             )}
           </div>
           <div></div>
@@ -135,19 +142,25 @@ export function Cards({
               className="w-full"
               style={{ height: "163px", overflowY: "auto" }}
             >
-              {/* <blockquote className="twitter-tweet"><p lang="qst" dir="ltr">Yes <a href="https://t.co/NwCAPMr9ia">https://t.co/NwCAPMr9ia</a></p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1881052891370361098?ref_src=twsrc%5Etfw">January 19, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" ></script> */}
-              <TwitterTweetEmbed tweetId={tweetId.toString()}></TwitterTweetEmbed>
+              <blockquote className="twitter-tweet">
+                  <a href={`https://twitter.com/user/status/${tweetId}`}></a>
+                </blockquote>
+            
+                <TwitterTweetEmbed
+                  tweetId={tweetId!}
+               
+               
+                />
             </div>
           )}
         </div>
 
-        {type === "linkedin"&& (
+        {type === "linkedin" && (
           <div style={{ height: "163px", overflowY: "auto" }}>
             <iframe
               src={link}
               width="310"
               height="163"
-              
               title="LinkedIn Post"
             ></iframe>
           </div>
