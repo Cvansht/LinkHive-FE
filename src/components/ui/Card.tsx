@@ -143,7 +143,7 @@ export function Cards({
               className="w-full"
               style={{ height: "163px", overflowY: "auto" }}
             >
-              <blockquote className="twitter-tweet"><p lang="en" dir="ltr">Greatest President ever! <a href="https://t.co/U8BuPVwSwd">pic.twitter.com/U8BuPVwSwd</a></p>&mdash; Elon Musk (@elonmusk)   <a href={`https://twitter.com/user/status/${tweetId}`}></a></blockquote> <script async src="https://platform.twitter.com/widgets.js"></script>
+              <blockquote className="twitter-tweet"><p lang="en" dir="ltr">Fetching post... <a href="https://t.co/U8BuPVwSwd">pic.twitter.com/U8BuPVwSwd</a></p>&mdash;  <a href={`https://twitter.com/user/status/${tweetId}`}></a></blockquote> <script async src="https://platform.twitter.com/widgets.js"></script>
               
               
               {/* <blockquote className="twitter-tweet">
