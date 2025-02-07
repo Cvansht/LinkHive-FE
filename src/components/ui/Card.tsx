@@ -6,7 +6,8 @@ import { InfoIcon } from "../icons/info";
 import { TwitterIcon } from "../icons/TwitterIcon";
 import { LinkedinIcon } from "../icons/linkedin";
 import { useEffect } from "react";
-import { TwitterTweetEmbed } from "react-twitter-embed";
+// import { TwitterTweetEmbed } from "react-twitter-embed";
+
 
 interface CardProps {
   title: string;
@@ -142,7 +143,10 @@ export function Cards({
               className="w-full"
               style={{ height: "163px", overflowY: "auto" }}
             >
-              <blockquote className="twitter-tweet">
+              <blockquote className="twitter-tweet"><p lang="en" dir="ltr">Greatest President ever! <a href="https://t.co/U8BuPVwSwd">pic.twitter.com/U8BuPVwSwd</a></p>&mdash; Elon Musk (@elonmusk)   <a href={`https://twitter.com/user/status/${tweetId}`}></a></blockquote> <script async src="https://platform.twitter.com/widgets.js"></script>
+              
+              
+              {/* <blockquote className="twitter-tweet">
                   <a href={`https://twitter.com/user/status/${tweetId}`}></a>
                 </blockquote>
             
@@ -150,7 +154,7 @@ export function Cards({
                   tweetId={tweetId!}
                
                
-                />
+                /> */}
             </div>
           )}
         </div>
