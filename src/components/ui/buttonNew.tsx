@@ -9,6 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const SignIn = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children = "Sign In", className = "", onClick, ...props }, ref) => {
     return (
+        //@ts-ignore
       <motion.button
         ref={ref}
         onClick={onClick}
